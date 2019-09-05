@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "funciones.h"
+#include "funciones.c"
 #include <string.h>
 
  int main()
@@ -18,14 +19,14 @@
     while(option!=5)
     {
         printf("---CALCULADORA---\n");
-        printf("Seleccione una opción:\n");
+        printf("Seleccione una opcion:\n");
         printf("1.Ingresar el primer operando\n");
         printf("2.Ingresar el segundo operando\n");
         printf("3.Calcular todas las operaciones\n");
         printf("4.Mostrar resultados\n");
         printf("5.Salir\n");
-        scanf("%d",&option);
         fflush(stdin);
+        scanf("%d",&option);
         switch(option)
             {
                 case 1: printf("Valor primer operando: \n");
@@ -36,14 +37,19 @@
                         scanf("%f",&segundoNumero);
                         fflush(stdin);
                         break;
-                case 3: resultadoSuma=sumarDosNumeros(primerNumero,segundoNumero);
+                case 3:
+                        resultadoSuma=sumarDosNumeros(primerNumero,segundoNumero);
                         resultadoResta=restarDosNumeros(primerNumero,segundoNumero);
                         resultadoMultiplicacion=multiplicarDosNumeros(primerNumero,segundoNumero);
                         resultadoDivision=dividirDosNumeros(primerNumero,segundoNumero);
                         factorialPrimerNumero=calcularFactorial(primerNumero);
                         factorialSegundoNumero=calcularFactorial(segundoNumero);
+                        // if (???)
                         pudeCalcular=1;
+                        printf("Operaciones calculadas.\n");
+                        system("pause");
                         break;
+
                 case 4:if(pudeCalcular==1)
                 {
                     printf("1.El resultado de la suma es:%.2f\n",resultadoSuma);
@@ -53,7 +59,7 @@
                     printf("3.No es posible dividir por 0.\n");
                     }else
                     {
-                    printf("\n3.El resultado de division es:%.2f\n",resultadoDivision);
+                    printf("3.El resultado de division es:%.2f\n",resultadoDivision);
                     }
                     printf("4.El resultado de la multiplicacion es:%.2f\n",resultadoMultiplicacion);
                     if(primerNumero<0 && segundoNumero<0)
@@ -62,25 +68,26 @@
                     }
                     else if (primerNumero>=0 && segundoNumero<0)
                     {
-                    printf("Factorial primer operando:%d ,el segundo es numero negativo y no puede calcularse su factorial",primerNumero);
+                    printf("5.Factorial primer operando: %d,el segundo es numero negativo y no puede calcularse su factorial\n",factorialPrimerNumero);
                     } else if (primerNumero<0 && segundoNumero>= 0)
                     {
-                    printf("El primer operando es numero negativo y no puede calcularse su factorial,Factorial segundo operando:%d ",segundoNumero);
+                    printf("5.El primer operando es numero negativo y no puede calcularse su factorial, Factorial segundo operando: %d\n",factorialSegundoNumero);
                     } else
                     {
-                    printf("5.Factorial primer operando:%d , Factorial segundo operando:%d\n",factorialPrimerNumero,factorialSegundoNumero);
+                    printf("5.Factorial primer operando: %d, Factorial segundo operando: %d\n",factorialPrimerNumero,factorialSegundoNumero);
                     }
-                    }
-                    else
+                    }else
                     {
                     printf("Antes de calcular debe ingresar ambos operandos.\n");
                     }
+                    system("pause");
                     break;
                 case 5:
                         break;
-                default:  printf("Error. Opción inválida.");
+                default:  printf("Error. Opcion invalida.\n");
                         break;
             }
+            system("cls");
     }
     return 0;
  }
