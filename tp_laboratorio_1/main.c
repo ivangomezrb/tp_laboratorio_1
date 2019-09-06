@@ -16,6 +16,8 @@
     float resultadoDivision;
     int factorialPrimerNumero;
     int factorialSegundoNumero;
+    int existePrimerNumero = 0;
+    int existeSegundoNumero = 0;
     while(option!=5)
     {
         printf("---CALCULADORA---\n");
@@ -32,24 +34,27 @@
                 case 1: printf("Valor primer operando: \n");
                         scanf("%f",&primerNumero);
                         fflush(stdin);
+                        existePrimerNumero = 1;
                         break;
                 case 2: printf("Valor segundo operando:\n");
                         scanf("%f",&segundoNumero);
                         fflush(stdin);
+                        existeSegundoNumero = 1;
                         break;
-                case 3:
+                case 3: if(existePrimerNumero == 1 && existeSegundoNumero == 1){
                         resultadoSuma=sumarDosNumeros(primerNumero,segundoNumero);
                         resultadoResta=restarDosNumeros(primerNumero,segundoNumero);
                         resultadoMultiplicacion=multiplicarDosNumeros(primerNumero,segundoNumero);
                         resultadoDivision=dividirDosNumeros(primerNumero,segundoNumero);
                         factorialPrimerNumero=calcularFactorial(primerNumero);
                         factorialSegundoNumero=calcularFactorial(segundoNumero);
-                        // if (???)
                         pudeCalcular=1;
                         printf("Operaciones calculadas.\n");
                         system("pause");
                         break;
-
+                        } else{
+                            printf("Antes de calcular debe ingresar ambos operandos.\n");
+                        }
                 case 4:if(pudeCalcular==1)
                 {
                     printf("1.El resultado de la suma es:%.2f\n",resultadoSuma);
@@ -76,9 +81,6 @@
                     {
                     printf("5.Factorial primer operando: %d, Factorial segundo operando: %d\n",factorialPrimerNumero,factorialSegundoNumero);
                     }
-                    }else
-                    {
-                    printf("Antes de calcular debe ingresar ambos operandos.\n");
                     }
                     system("pause");
                     break;
