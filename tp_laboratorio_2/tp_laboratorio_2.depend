@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # depslib dependency file v1.0
 1570062127 source:c:\users\iván\desktop\programacion\tp_laboratorio_1\tp_laboratorio_2\main.c
 	<stdio.h>
@@ -35,3 +36,22 @@
 	<string.h>
 	"utn.h"
 
+=======
+# depslib dependency file v1.0
+1570062127 source:c:\users\iván\desktop\programacion\tp_laboratorio_1\tp_laboratorio_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+	"utn.h"
+
+1570062272 c:\users\iván\desktop\programacion\tp_laboratorio_1\tp_laboratorio_2\empleado.h
+
+1570061948 c:\users\iván\desktop\programacion\tp_laboratorio_1\tp_laboratorio_2\utn.h
+
+1570063565 source:c:\users\iván\desktop\programacion\tp_laboratorio_2\main.c
+
+1570062916 c:\users\iván\desktop\programacion\tp_laboratorio_2\empleado.h
+
+1570061948 c:\users\iván\desktop\programacion\tp_laboratorio_2\utn.h
+
+>>>>>>> b55dfb6eb7752af3b8f2774976e94f3539e20d6b
