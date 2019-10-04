@@ -84,7 +84,7 @@ int buscarEmpleadoPorId(struct sEmployee *aArray,int cantidad,int id){
 	if(aArray!=NULL && cantidad>0){
 		for(i=0;i<cantidad;i++){
 			if(aArray[i].id==id && aArray[i].status == STATUS_NOT_EMPTY){
-				retorno = i; // Devuelvo la posicion
+				retorno = i;
 				break;
 			}
 		}
